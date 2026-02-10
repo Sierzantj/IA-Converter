@@ -1,0 +1,33 @@
+number = int(input('Enter a number: '))
+
+stbase = int(input("Enter a starting base: ")) 
+base10 = 0
+endbase = int(input("Enter and end base: "))
+r = 0
+d = 0
+for z in range(0,15):
+    dig = (number % 10**(z+1)) // 10**(z)
+    if dig == 0:
+        r = r + 1
+    if not dig ==0:
+        d = d + 1
+        d = d + r
+        r = 0
+for x in range(0,d):
+    dig = (number % 10**(x+1)) // 10**(x)
+    if x == 0:
+        step2 = str(dig) + "*" + str(stbase**x)
+    if not x == 0:
+        step2 = str(step2) + " + " + str(dig) + "*" + str(stbase**x)
+    base10 = base10 + dig*(stbase**x)
+step1 = "First, multiply each value by the value designated by the digit's location, and add them together to get the base 10 value:"
+step2 = step2 + " = " + str(base10)
+step3 = "Next we convert the base 10 value of " + str(base10) + "to base " + str(endbase)
+step4 = "To do this, we start at the highest digit, and divide by the highest possible power of our desired base, and the result will be the highest digit of the converted number"
+step5 = 'We will then continue dividing by each subsequent power of our end base and forming each new digit as we go'
+
+for e in range(0,15):
+    s = 9
+print(step1)
+print(step2)
+print(step3)
