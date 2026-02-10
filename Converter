@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: rgb(167, 167, 238);
+    }
+    </style>
+  <title>Base Converter</title>
+</head>
+<body>
+  <h1>Number Base Converter</h1>
+  <form action="/convert" method="POST">
+    <label>Enter the number you would like to convert:</label>
+    <input type="text" name="number" required>
+<br>
+    <label>Convert from:</label>
+    <select name="inbase">
+      <option value="2">2 (binary)</option>
+      <option value="8">8 (octal)</option>
+      <option value="10">10 (decimal)</option>
+    </select>
+    <br>
+    <Label>Convert to:</Label>
+    <select name="endbase">
+      <option value="2">2 (binary)</option>
+      <option value="8">8 (octal)</option>s
+      <option value="10">10 (decimal)</option>
+    </select>
+    <br>
+    <button style="font-size:35px" type="submit">Convert</button>
+  </form>
+
+  {% if conversion %}
+    <h2>Request: {{ conversion }} </h2>
+  {% endif %}
+  {% if step1 %}
+    <h1>Instructions: {{ step1 }}</h2>
+  {% endif %}
+  {% if result %}
+    <h1 style="color: green;">Result: {{ result }}</h1>
+  {% endif %}
+</body>
+</html>
