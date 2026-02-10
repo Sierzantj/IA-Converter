@@ -1,0 +1,16 @@
+stbase = 2
+number = int(input('Enter number: '))
+bs10 = 0
+endbase = 7
+result = 0
+for x in range(0,17):
+           dig = ((number % 10**(x+1)) // 10**x) * stbase**x
+           print(dig)
+           bs10 = bs10 + dig
+           print(bs10)
+print("convert")
+for y in range(0,17):
+        cdig = ((bs10 % endbase**(y+1)) // endbase**y) * 10^y
+        print(cdig)
+        result = result + cdig
+print(int(result))
