@@ -1,0 +1,14 @@
+import random
+for x in range(1,11):
+    correct = random.randint(1,4)
+    question = 0
+    inputbase = 4
+    endbase = 4
+    while inputbase == endbase:
+        inputbase = random.randint(2,10)
+        endbase = random.randint(2,10)
+    for y in range(0,6):
+        digit = random.randint(0,inputbase-1) * 10**y
+        question = question + digit
+    print("Convert " + str(question) + " from base " + str(inputbase) + " to base " + str(endbase))
+
